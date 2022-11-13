@@ -14,7 +14,7 @@ import {
   TableCell,
   TableRow,
 } from "@mui/material";
-import Right from "./Right";
+import ImportExportIcon from '@mui/icons-material/ImportExport';
 
 function MainComp() {
   const data = [
@@ -175,7 +175,7 @@ function MainComp() {
             </Grid>
           </Grid>
           <Grid container mt={2} spacing={0}>
-            <Grid item xs={3}>
+            <Grid item xs={2.5}>
               <Typography
                 variant="h6"
                 sx={{
@@ -187,23 +187,27 @@ function MainComp() {
               >
                 Show classes within:
               </Typography>
-              <TextField
-                id="filled-number"
-                type="number"
-                variant="filled"
-                inputProps={{
-                  style: {
-                    fontWeight: 800,
-                    fontSize: "1.3rem",
-                    height: ".2rem",
-                  },
-                }}
+              <Button 
+                variant="contained"
                 sx={{
-                  maxWidth: "165px",
-                  border: "2px solid black",
-                  borderRadius: "7px",
+                  display:"flex",flexDirection:"row",justifyContent:"space-between",
+                  minWidth:"175px",
+                  bgcolor: "#ffffff",
+                  border:"2px solid black",
+                  borderRadius:"8px",py:0,my:0,
+                  color:"black",
+                  margin: 0,
+                  px: 1,
+                  fontSize: "1.15rem",
+                  "&:hover ": {
+                    bgcolor: "#ffffff",color:"black"
+                  },
+                  textTransform: "none",
                 }}
-              />
+              >
+                <Typography variant="h6">200 miles</Typography>
+                <ImportExportIcon />
+              </Button>
               <Typography
                 variant="h6"
                 sx={{
@@ -216,23 +220,32 @@ function MainComp() {
               >
                 Month:
               </Typography>
-              <TextField
-                id="filled-number"
-                type="number"
-                variant="filled"
-                inputProps={{
-                  style: {
-                    fontWeight: 800,
-                    fontSize: "1.3rem",
-                    height: ".2rem",
-                  },
-                }}
+              <Button
+                variant="contained"
                 sx={{
-                  maxWidth: "165px",
-                  border: "2px solid black",
-                  borderRadius: "7px",
+                  display:"flex",flexDirection:"row",justifyContent:"space-between",
+                  bgcolor: "#ffffff",
+                  color:"black",
+                  minWidth:"150px",
+                  border:"2px solid black",
+                  borderRadius:"8px",
+                  my: 0,
+                  px: 1,
+                  py:0,
+                  fontSize: "1.15rem",
+                  "&:hover ": {
+                    bgcolor: "#ffffff",
+                    color:"black"
+                  },
+                  textTransform: "none",
                 }}
-              />
+              >
+                <Typography variant="h6">
+                Any
+                </Typography>
+                <ImportExportIcon />
+
+              </Button>
               <Typography
                 variant="h6"
                 sx={{
@@ -256,7 +269,7 @@ function MainComp() {
                       Classes for the hearing impaired
                     </Typography>
                   }
-                  sx={{ py: 1 }}
+                  sx={{ py: 1,alignItems:"flex-start" }}
                 />
                 <FormControlLabel
                   control={<BpCheckbox />}
@@ -268,7 +281,7 @@ function MainComp() {
                       Instructors bilingues(espanol -ingles)
                     </Typography>
                   }
-                  sx={{ py: 1 }}
+                  sx={{ py: 1 ,alignItems:"flex-start"}}
                 />
                 <FormControlLabel
                   control={<BpCheckbox />}
@@ -280,34 +293,318 @@ function MainComp() {
                       Open classes
                     </Typography>
                   }
-                  sx={{ py: 1 }}
+                  sx={{ py: 1,alignItems:"flex-start" }}
                 />
               </FormGroup>
             </Grid>
-            <Grid item md={9}>
+            <Grid item md={9.5}>
               <Grid item m={0} p={0} md={12}>
-                    {data.map((row) => (
                 <Table>
-                  <TableBody 
-                  sx={{
-                  }}>
-                      <TableRow
+                  <TableBody>
+                    <TableRow
+                      sx={{
+                        minHeight: "300px",
+                        border: "1px solid #bababa",
+                        borderRadius: "20px",
+                        borderLeft: "1px solid #bababa",
+                        height: "150px",
+                      }}
+                    >
+                      <TableCell
                         sx={{
-                          borderRight:"1px solid black",
-                          borderLeft:"1px solid black",
-                          borderBottom:"1px solid black",
-                          borderTop:"1px solid black"
+                          maxWidth: "50px",
+                          pb: 2,
+                          verticalAlign: "top",
+                          borderRight: "1px solid #bababa",
                         }}
                       >
-                        <TableCell sx={{pb:2,borderRight:"1px solid black"}}>{row.Date}</TableCell>
-                        <TableCell sx={{pb:2,borderRight:"1px solid black"}}>{row.Time}</TableCell>
-                        <TableCell sx={{pb:2,borderRight:"1px solid black"}}>Open{row.Address}</TableCell>
-                        <TableCell sx={{pb:2,borderRight:"1px solid black"}}>{row.Seats}</TableCell>
-                        <TableCell sx={{pb:2,borderRight:"1px solid black"}}><Button>Learn More</Button></TableCell>
-                      </TableRow>
+                        <Typography
+                          variant="h6"
+                          noWrap
+                          sx={{ fontWeight: "900", color: "#383838" }}
+                        >
+                          Nov. 12
+                        </Typography>
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          maxWidth: "135px",
+                          pb: 2,
+                          verticalAlign: "top",
+                          borderRight: "1px solid #bababa",
+                        }}
+                      >
+                        <Typography variant="h6" sx={{ color: "#383838" }}>
+                          08:00 am - 05:00 pm
+                        </Typography>
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          maxWidth: "215px",
+                          pb: 2,
+                          borderRight: "1px solid #bababa",
+                        }}
+                      >
+                        <Typography
+                          variant="h6"
+                          sx={{ textDecoration: "justify", color: "#383838" }}
+                        >
+                          410 S. Pecan Pearsall, TX 78061
+                        </Typography>
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          maxWidth: "90px",
+                          textAlign: "left",
+                          pb: 2,
+                          borderRight: "1px solid #bababa",
+                        }}
+                      >
+                        <Typography
+                          variant="h4"
+                          sx={{ fontWeight: "700", color: "#84b333" }}
+                        >
+                          Open
+                        </Typography>
+                        <Typography variant="h6" sx={{ color: "#383838" }}>
+                          12 seats available
+                        </Typography>
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          maxWidth: "300px",
+                          display: "flex",
+                          alignItem: "center",
+                          justifyContent: "center",
+                          flexDirection: "column",
+                          pb: 2,
+                          border: "none",
+                        }}
+                      >
+                        <Button
+                          variant="contained"
+                          sx={{
+                            bgcolor: "#84b333",
+                            m: 0,
+                            px: 1,
+                            fontSize: "1.15rem",
+                            "&:hover ": {
+                              bgcolor: "#84b333",
+                            },
+                            textTransform: "none",
+                          }}
+                        >
+                          Learn more
+                        </Button>
+                      </TableCell>
+                    </TableRow>
                   </TableBody>
                 </Table>
-                    ))}
+                <Table sx={{ mt: 3 }}>
+                  <TableBody>
+                    <TableRow
+                      sx={{
+                        minHeight: "300px",
+                        border: "1px solid #bababa",
+                        borderRadius: "20px",
+                        borderLeft: "1px solid #bababa",
+                        height: "150px",
+                      }}
+                    >
+                      <TableCell
+                        sx={{
+                          textAlign: "",
+                          maxWidth: "50px",
+                          pb: 2,
+                          verticalAlign: "top",
+                          borderRight: "1px solid #bababa",
+                        }}
+                      >
+                        <Typography
+                          variant="h6"
+                          noWrap
+                          sx={{ fontWeight: "900", color: "#383838" }}
+                        >
+                          Nov. 12
+                        </Typography>
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          maxWidth: "135px",
+                          pb: 2,
+                          verticalAlign: "top",
+                          borderRight: "1px solid #bababa",
+                        }}
+                      >
+                        <Typography variant="h6" sx={{ color: "#383838" }}>
+                          08:00 am - 04:30 pm
+                        </Typography>
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          maxWidth: "215px",
+                          pb: 2,
+                          borderRight: "1px solid #bababa",
+                        }}
+                      >
+                        <Typography
+                          variant="h6"
+                          sx={{ textDecoration: "justify", color: "#383838" }}
+                        >
+                          Seabrook Volunteer Fire Department 1850 E. Meyer
+                          Ave.Seabrook , TX 77586
+                        </Typography>
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          maxWidth: "90px",
+                          textAlign: "left",
+                          pb: 2,
+                          borderRight: "1px solid #bababa",
+                        }}
+                      >
+                        <Typography
+                          variant="h4"
+                          sx={{ fontWeight: "700", color: "#84b333" }}
+                        >
+                          Open
+                        </Typography>
+                        <Typography variant="h6" sx={{ color: "#383838" }}>
+                          5 seats available
+                        </Typography>
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          maxWidth: "300px",
+                          display: "flex",
+                          alignItem: "center",
+                          justifyContent: "center",
+                          flexDirection: "column",
+                          pb: 2,
+                          border: "none",
+                        }}
+                      >
+                        <Button
+                          variant="contained"
+                          sx={{
+                            bgcolor: "#84b333",
+                            m: 0,
+                            px: 1,
+                            fontSize: "1.15rem",
+                            "&:hover ": {
+                              bgcolor: "#84b333",
+                            },
+                            textTransform: "none",
+                          }}
+                        >
+                          Learn more
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+                <Table sx={{ mt: 3, border: "1px solid #bababa" }}>
+                  <TableBody>
+                    <TableRow
+                      sx={{
+                        minHeight: "300px",
+
+                        borderRadius: "20px",
+                        borderLeft: "1px solid #bababa",
+                        height: "150px",
+                      }}
+                    >
+                      <TableCell
+                        sx={{
+                          textAlign: "",
+                          maxWidth: "50px",
+                          pb: 2,
+                          verticalAlign: "top",
+                          borderRight: "1px solid #bababa",
+                        }}
+                      >
+                        <Typography
+                          variant="h6"
+                          noWrap
+                          sx={{ fontWeight: "900", color: "#383838" }}
+                        >
+                          Nov. 12
+                        </Typography>
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          maxWidth: "135px",
+                          pb: 2,
+                          verticalAlign: "top",
+                          borderRight: "1px solid #bababa",
+                        }}
+                      >
+                        <Typography variant="h6" sx={{ color: "#383838" }}>
+                          08:00 am - 05:00 pm
+                        </Typography>
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          maxWidth: "215px",
+                          pb: 2,
+                          borderRight: "1px solid #bababa",
+                        }}
+                      >
+                        <Typography
+                          variant="h6"
+                          sx={{ textDecoration: "justify", color: "#383838" }}
+                        >
+                          Casa Mare Girl Scout Camp Casa Mare, TX 77862
+                        </Typography>
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          maxWidth: "90px",
+                          textAlign: "left",
+                          pb: 2,
+                          borderRight: "1px solid #bababa",
+                        }}
+                      >
+                        <Typography
+                          variant="h4"
+                          sx={{ fontWeight: "700", color: "#84b333" }}
+                        >
+                          Open
+                        </Typography>
+                        <Typography variant="h6" sx={{ color: "#383838" }}>
+                          10 seats available
+                        </Typography>
+                      </TableCell>
+                      <TableCell
+                        sx={{
+                          maxWidth: "300px",
+                          display: "flex",
+                          alignItem: "center",
+                          justifyContent: "center",
+                          flexDirection: "column",
+                          pb: 2,
+                          border: "none",
+                        }}
+                      >
+                        <Button
+                          variant="contained"
+                          sx={{
+                            bgcolor: "#84b333",
+                            m: 0,
+                            px: 1,
+                            fontSize: "1.15rem",
+                            "&:hover ": {
+                              bgcolor: "#84b333",
+                            },
+                            textTransform: "none",
+                          }}
+                        >
+                          Learn more
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
               </Grid>
             </Grid>
           </Grid>
